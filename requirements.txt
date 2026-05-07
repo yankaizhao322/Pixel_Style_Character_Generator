@@ -1,6 +1,6 @@
 streamlit
 torch
 gspread
-oauth2client
+google-auth
 Pillow
 torchvision

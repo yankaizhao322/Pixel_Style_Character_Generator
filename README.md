@@ -84,7 +84,19 @@ streamlit run app.py
 
 Deploy Streamlit app to Streamlit Community Cloud for public access.
 
-Connect to Google Sheet via service account JSON key.
+Use `app.py` as the Streamlit entry point. The app expects:
+
+- Python version: 3.10+
+- Requirements file: `requirements.txt`
+- Main file path: `app.py`
+
+Feedback collection uses Streamlit secrets instead of a committed JSON credential file. In Streamlit
+Community Cloud, add the contents shown in `.streamlit/secrets.toml.example` under App settings ->
+Secrets. If secrets are not configured, character generation still works and only feedback submission
+is disabled.
+
+Important: never commit `backend/credentials/*.json` or `.streamlit/secrets.toml`. If a service
+account key was ever committed publicly, rotate that key in Google Cloud before deploying.
 
 # Contact:
 For any issues, please contact:
